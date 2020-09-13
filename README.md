@@ -39,7 +39,7 @@ function styleDeclaration(property, value) {
 
   /* Prefix values, e.g. `position: "sticky"` -> `position: "-webkit-sticky"` */
   /* Notice that flags don't overlap and property prefixing isn't needed here */
-  const valueFlags = cssValuePrefixFlags(value);
+  const valueFlags = cssValuePrefixFlags(property, value);
   if (valueFlags & 0b001) cssText += `${property}:-webkit-${value};`;
   else if (valueFlags & 0b010) cssText += `${property}:-moz-${value};`;
   else if (valueFlags & 0b100) cssText += `${property}:-ms-${value};`;
