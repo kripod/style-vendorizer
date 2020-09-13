@@ -4,7 +4,11 @@ import bcd from "mdn-browser-compat-data";
 import type { Identifier } from "mdn-browser-compat-data/types";
 import { css } from "mdn-data";
 
-import { CSSPrefixFlags } from "../src";
+const enum CSSPrefixFlags {
+	"-webkit-" = 1 << 0,
+	"-moz-" = 1 << 1,
+	"-ms-" = 1 << 2,
+}
 
 export const nonObsoleteProperties = Object.keys(css.properties).filter(
 	(property) => {
