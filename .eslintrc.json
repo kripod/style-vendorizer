@@ -1,0 +1,20 @@
+{
+	"root": true,
+	"env": { "browser": true },
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"prettier/@typescript-eslint"
+	],
+	"plugins": ["simple-import-sort"],
+	"rules": {
+		"simple-import-sort/sort": "error"
+	},
+	"overrides": [
+		{
+			"files": ["*.config.js"],
+			"env": { "node": true }
+		}
+	]
+}

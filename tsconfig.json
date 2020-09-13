@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
+		"target": "ES5",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"downlevelIteration": true,
+		"declaration": true,
+		"declarationMap": true
+	}
+}
