@@ -199,7 +199,6 @@ expectedPrefixFlagsByProperty.delete("justify-self"); // "-ms-grid-column-align"
 expectedPrefixFlagsByProperty.delete("line-break"); // Supported by iOS Safari 11+
 expectedPrefixFlagsByProperty.delete("max-inline-size"); // Supported by Safari 12.1+
 expectedPrefixFlagsByProperty.delete("scroll-snap-type"); // IE 11 uses non-standard values
-expectedPrefixFlagsByProperty.delete("scroll-snap-type"); // IE 11 uses non-standard values
 expectedPrefixFlagsByProperty.delete("text-decoration-skip"); // Prefer "text-decoration-skip-ink"
 expectedPrefixFlagsByProperty.set(
 	"text-size-adjust",
@@ -216,10 +215,6 @@ expectedPrefixFlagsByProperty.set(
 export const expectedPrefixFlagsByPropertyValuePair = new Map(
 	[...prefixesByPropertyValuePair.entries()].map(
 		([propertyValuePair, prefixes]) => {
-			if (propertyValuePair.endsWith("-content")) {
-				prefixes.delete("-webkit-"); // TODO: Remove when MDN BCD gets updated
-			}
-
 			return [
 				propertyValuePair,
 				[...prefixes.values()]
@@ -231,22 +226,9 @@ export const expectedPrefixFlagsByPropertyValuePair = new Map(
 		},
 	),
 );
-expectedPrefixFlagsByPropertyValuePair.set(
-	"height:fit-content",
-	CSSPrefixFlags["-moz-"],
-);
-expectedPrefixFlagsByPropertyValuePair.set(
-	"max-block-size:fit-content",
-	CSSPrefixFlags["-moz-"],
-);
-expectedPrefixFlagsByPropertyValuePair.set(
-	"min-block-size:fit-content",
-	CSSPrefixFlags["-moz-"],
-);
 expectedPrefixFlagsByPropertyValuePair.delete("background-image:element"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("background-image:image-rect"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("cursor:grab"); // Not required for Opera Mobile and QQ Browser
-expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:auto"); // Supported by Safari 9+
 expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:max-content"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:min-content"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("image-rendering:crisp-edges"); // Only supported by Firefox
@@ -275,9 +257,9 @@ expectedPrefixFlagsByPropertyValuePair.delete(
 ); // Not universally supported
 expectedPrefixFlagsByPropertyValuePair.delete("text-decoration:shorthand"); // Supported with property prefix
 expectedPrefixFlagsByPropertyValuePair.delete("transform:3d"); // Supported by newer WebView versions
-expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:isolate"); // // Site authors shouldn't override this
-expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:isolate-override"); // // Site authors shouldn't override this
-expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:plaintext"); // // Site authors shouldn't override this
+expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:isolate"); // Site authors shouldn't override this
+expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:isolate-override"); // Site authors shouldn't override this
+expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:plaintext"); // Site authors shouldn't override this
 
 export const expectedAliasesByProperty = new Map(
 	[...aliasesByProperty.entries()]
@@ -289,10 +271,7 @@ export const expectedAliasesByProperty = new Map(
 				property !== "text-decoration-thickness", // Firefox 69
 		)
 		.map(([property, aliases]) => {
-			if (property === "column-gap") {
-				aliases.delete("grid-gap");
-				aliases.add("grid-column-gap");
-			} else if (property.startsWith("grid-auto-")) {
+			if (property.startsWith("grid-auto-")) {
 				property = property.replace("auto", "template");
 			} else if (property === "text-combine-upright") {
 				aliases.delete("-webkit-text-combine"); // Uses non-standard values
