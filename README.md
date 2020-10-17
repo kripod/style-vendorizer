@@ -76,21 +76,16 @@ if (flags & CSSPrefixFlags["-ms-"]) cssText += "...";
 Every browser in the default [Browserslist](https://github.com/browserslist/browserslist) configuration is supported and tested against:
 
 - Baidu Browser for Android 7.12+
-- Chrome 83+
-- Chrome for Android 84+
-- Edge 18+
-- Firefox 77+, ESR 68
-- Firefox for Android 68+
+- Chrome 57+
+- Edge 16+
+- Firefox 48+
 - Internet Explorer 11
 - KaiOS Browser 2.5+
-- Opera 68+
-- Opera for Android 46+
-- Safari 13+
-- Safari for iOS 12+
+- Opera 46+
+- Safari 12.2+
 - Samsung Internet Browser 11.1+
 - QQ Browser for Android 10.4+
 - UC Browser for Android 12.12+
-- WebView for Android 81+
 
 ## Quirks
 
@@ -120,4 +115,4 @@ Every browser in the default [Browserslist](https://github.com/browserslist/brow
 
 ## Acknowledgements
 
-This project was heavily inspired by [tiny-css-prefixer](https://github.com/kitten/tiny-css-prefixer). Test vectors are obtained from [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data).
+This project was heavily inspired by [tiny-css-prefixer](https://github.com/kitten/tiny-css-prefixer). Test vectors are obtained from [@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data).
