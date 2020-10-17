@@ -1,7 +1,7 @@
+import bcd from "@mdn/browser-compat-data";
+import type { Identifier } from "@mdn/browser-compat-data/types";
 import browserslist from "browserslist";
 import compareVersions from "compare-versions";
-import bcd from "mdn-browser-compat-data";
-import type { Identifier } from "mdn-browser-compat-data/types";
 import { css } from "mdn-data";
 
 const enum CSSPrefixFlags {
@@ -55,7 +55,9 @@ const minSupportedVersionsByBrowser = new Map<string, string>();
 /* TODO: Adjust query when necessary */
 // UC Browser 12.12 -> Chrome >=57
 // KaiOS 2.5 -> Firefox >=48
-browserslist("defaults, chrome >=57, firefox >=48")
+browserslist(
+	"defaults, chrome >=57, edge >=16, firefox >=48, opera >=46, safari >=12.2",
+)
 	.map((stat) => {
 		const [browserslistId, versionRange] = stat.split(" ");
 		return [
@@ -177,7 +179,7 @@ Object.entries(bcd.css.properties).forEach(([property, featureIdentifier]) => {
 	traverse(featureIdentifier, property);
 });
 
-/* TODO: Remove adjustments below as mdn-browser-compat-data gets fixed */
+/* TODO: Remove adjustments below as @mdn/browser-compat-data gets fixed */
 
 export const expectedPrefixFlagsByProperty = new Map(
 	[...prefixesByProperty.entries()].map(([property, prefixes]) => [
