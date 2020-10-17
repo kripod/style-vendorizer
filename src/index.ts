@@ -31,7 +31,7 @@ export function cssPropertyAlias(property: string): string | undefined {
 }
 
 export function cssPropertyPrefixFlags(property: string): number {
-	const matches = /^(?:(text-(?:decoration(?:$|-[lc]|-st)|e|or|si)|back(?:ground-cl|d|f)|box-d|(?:mask(?:$|-[ispro]|-cl)))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
+	const matches = /^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|(?:mask(?:$|-[ispro]|-cl)))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
 		property,
 	);
 
