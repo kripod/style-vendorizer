@@ -38,7 +38,7 @@ export function cssPropertyAlias(property: string): string | undefined {
 }
 
 export function cssPropertyPrefixFlags(property: string): number {
-	const matches = /^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|(?:mask(?:$|-[ispro]|-cl)))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
+	const matches = /^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|mask(?:$|-[ispro]|-cl))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
 		property,
 	);
 
@@ -71,6 +71,6 @@ export function cssValuePrefixFlags(property: string, value: string): number {
 		return value[3] === "-" ? CSSPrefixFlags["-moz-"] : 0;
 	} else {
 		// display: "grid" | "inline-grid"
-		return /^(inline-)?grid$/i.test(value) ? CSSPrefixFlags["-ms-"] : 0;
+		return /^(?:inline-)?grid$/i.test(value) ? CSSPrefixFlags["-ms-"] : 0;
 	}
 }
