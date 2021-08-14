@@ -199,10 +199,8 @@ expectedPrefixFlagsByProperty.set(
 expectedPrefixFlagsByProperty.delete("align-self"); // "-ms-grid-row-align" in IE 11
 expectedPrefixFlagsByProperty.delete("justify-self"); // "-ms-grid-column-align" in IE 11
 expectedPrefixFlagsByProperty.delete("line-break"); // Supported by iOS Safari 11+
-expectedPrefixFlagsByProperty.delete("max-inline-size"); // Supported by Safari 12.1+
-expectedPrefixFlagsByProperty.delete("scroll-snap-type"); // IE 11 uses non-standard values
 expectedPrefixFlagsByProperty.delete("ruby-position"); // "-webkit-ruby-position" uses non-standard values
-expectedPrefixFlagsByProperty.delete("text-decoration-skip"); // Prefer "text-decoration-skip-ink"
+expectedPrefixFlagsByProperty.delete("scroll-snap-type"); // IE 11 uses non-standard values
 expectedPrefixFlagsByProperty.set(
 	"text-size-adjust",
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -230,7 +228,6 @@ export const expectedPrefixFlagsByPropertyValuePair = new Map(
 	),
 );
 expectedPrefixFlagsByPropertyValuePair.delete("background-image:element"); // Only supported by Firefox
-expectedPrefixFlagsByPropertyValuePair.delete("background-image:image-rect"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("cursor:grab"); // Not required for Opera Mobile and QQ Browser
 expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:max-content"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:min-content"); // Only supported by Firefox
