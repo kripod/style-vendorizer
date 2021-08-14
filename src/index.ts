@@ -38,9 +38,10 @@ export function cssPropertyAlias(property: string): string | undefined {
 }
 
 export function cssPropertyPrefixFlags(property: string): number {
-	const matches = /^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|mask(?:$|-[ispro]|-cl))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
-		property,
-	);
+	const matches =
+		/^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|mask(?:$|-[ispro]|-cl))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
+			property,
+		);
 
 	if (!matches) return 0;
 
@@ -51,9 +52,10 @@ export function cssPropertyPrefixFlags(property: string): number {
 }
 
 export function cssValuePrefixFlags(property: string, value: string): number {
-	const matches = /^(?:(pos)|(cli)|(background-i)|((?:max-|min-)?(?:block-s|inl|he|widt))|(dis))/i.exec(
-		property,
-	);
+	const matches =
+		/^(?:(pos)|(cli)|(background-i)|((?:max-|min-)?(?:block-s|inl|he|widt))|(dis))/i.exec(
+			property,
+		);
 
 	if (!matches) return 0;
 
