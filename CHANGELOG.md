@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/kripod/style-vendorizer/compare/v2.0.0...v2.1.0) (2021-08-14)
+
+### Features
+
+- support new aliases and prefixes ([6630626](https://github.com/kripod/style-vendorizer/commit/6630626d24454a5438fab9d471cc9bcffec4b2c9))
+
+### Bug Fixes
+
+- minor regexp tweaks ([d57ee67](https://github.com/kripod/style-vendorizer/commit/d57ee67de9e38e3f8ee6d658bd73a17fb09d7bf8))
+
 ## 2.0.0 (2020-10-17)
 
 ### ⚠ BREAKING CHANGES
