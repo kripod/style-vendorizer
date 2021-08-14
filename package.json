@@ -32,6 +32,7 @@
 		"commit": "git-cz",
 		"format": "prettier --ignore-path .gitignore --write .",
 		"lint": "eslint --ignore-path .gitignore --ext .ts,.js .",
+		"prepare": "husky install",
 		"release": "standard-version",
 		"test": "jest"
 	},
