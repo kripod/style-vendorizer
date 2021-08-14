@@ -5,11 +5,12 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"prettier",
-		"prettier/@typescript-eslint"
+		"prettier/prettier"
 	],
 	"plugins": ["simple-import-sort"],
 	"rules": {
-		"simple-import-sort/sort": "error"
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error"
 	},
 	"overrides": [
 		{
