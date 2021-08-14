@@ -201,6 +201,7 @@ expectedPrefixFlagsByProperty.delete("justify-self"); // "-ms-grid-column-align"
 expectedPrefixFlagsByProperty.delete("line-break"); // Supported by iOS Safari 11+
 expectedPrefixFlagsByProperty.delete("max-inline-size"); // Supported by Safari 12.1+
 expectedPrefixFlagsByProperty.delete("scroll-snap-type"); // IE 11 uses non-standard values
+expectedPrefixFlagsByProperty.delete("ruby-position"); // "-webkit-ruby-position" uses non-standard values
 expectedPrefixFlagsByProperty.delete("text-decoration-skip"); // Prefer "text-decoration-skip-ink"
 expectedPrefixFlagsByProperty.set(
 	"text-size-adjust",
