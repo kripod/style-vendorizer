@@ -1,6 +1,6 @@
 {
 	"name": "style-vendorizer",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Tiny CSS vendor prefixer and property alias mapper for runtime styling solutions",
 	"keywords": [
 		"css",
