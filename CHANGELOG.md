@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.3](https://github.com/kripod/style-vendorizer/compare/v2.2.2...v2.2.3) (2022-06-25)
+
+### Bug Fixes
+
+- reduce bundle size caused by wrong tsconfig ([407fd4f](https://github.com/kripod/style-vendorizer/commit/407fd4fb444f0f02d5bb77416aa75e788c1b77ef))
+
 ### [2.2.2](https://github.com/kripod/style-vendorizer/compare/v2.2.1...v2.2.2) (2022-06-25)
+
+### Docs
+
+- **changelog:** fix on npm
 
 ### [2.2.1](https://github.com/kripod/style-vendorizer/compare/v2.2.0...v2.2.1) (2022-06-25)
 
