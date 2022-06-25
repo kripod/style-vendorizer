@@ -1,14 +1,14 @@
 {
+	"extends": "@tsconfig/strictest/tsconfig.json",
 	"compilerOptions": {
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"importsNotUsedAsValues": "error",
 		"target": "ES5",
 		"module": "ESNext",
 		"moduleResolution": "NodeNext",
-		"esModuleInterop": true,
+		"isolatedModules": true,
 		"downlevelIteration": true,
 		"declaration": true,
-		"declarationMap": true
+		"declarationMap": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false
 	}
 }

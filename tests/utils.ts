@@ -58,10 +58,11 @@ browserslist(
 	"defaults, chrome >=57, edge >=16, firefox >=48, ie 11, opera >=46, safari >=12.2",
 )
 	.map((stat) => {
-		const [browserslistId, versionRange] = stat.split(" ");
+		const [browserslistId, versionRange] = stat.split(" ") as [string, string];
 		return [
 			browsersByBrowserslistId.get(browserslistId),
-			versionRange.split("-")[0], // Uses lower version if a range is given
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			versionRange.split("-")[0]!, // Uses lower version if a range is given
 		] as const;
 	})
 	.forEach(([browser, version]) => {

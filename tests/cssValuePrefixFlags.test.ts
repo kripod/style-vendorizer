@@ -4,7 +4,10 @@ import { expectedPrefixFlagsByPropertyValuePair } from "./utils";
 test.each(
 	[...expectedPrefixFlagsByPropertyValuePair.entries()].map(
 		([propertyValuePair, prefixFlag]) => {
-			const [property, value] = propertyValuePair.split(":");
+			const [property, value] = propertyValuePair.split(":") as [
+				string,
+				string,
+			];
 			return [property, value, prefixFlag] as const;
 		},
 	),
