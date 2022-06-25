@@ -4,7 +4,6 @@ Tiny CSS vendor prefixer and property alias mapper for runtime styling solutions
 
 [![npm](https://img.shields.io/npm/v/style-vendorizer)](https://www.npmjs.com/package/style-vendorizer)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/style-vendorizer)](https://bundlephobia.com/package/style-vendorizer)
-[![Travis (.com)](https://img.shields.io/travis/com/kripod/style-vendorizer)](https://travis-ci.com/github/kripod/style-vendorizer)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/kripod/style-vendorizer/CI/main)](https://github.com/kripod/style-vendorizer/actions/workflows/ci.yaml)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](./CODE_OF_CONDUCT.md)
 
