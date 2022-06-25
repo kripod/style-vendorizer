@@ -4,7 +4,7 @@
 		"target": "ES5",
 		"module": "ESNext",
 		"moduleResolution": "NodeNext",
-		"isolatedModules": true,
+		"isolatedModules": false,
 		"downlevelIteration": true,
 		"declaration": true,
 		"declarationMap": true,
