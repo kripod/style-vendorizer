@@ -55,7 +55,7 @@ const minSupportedVersionsByBrowser = new Map<string, string>();
 // UC Browser 12.12 -> Chrome >=57
 // KaiOS 2.5 -> Firefox >=48
 browserslist(
-	"defaults, chrome >=57, edge >=16, firefox >=48, opera >=46, safari >=12.2",
+	"defaults, chrome >=57, edge >=16, firefox >=48, ie 11, opera >=46, safari >=12.2",
 )
 	.map((stat) => {
 		const [browserslistId, versionRange] = stat.split(" ");
@@ -201,6 +201,7 @@ expectedPrefixFlagsByProperty.set(
 	CSSPrefixFlags["-webkit-"],
 );
 expectedPrefixFlagsByProperty.delete("align-self"); // "-ms-grid-row-align" in IE 11
+expectedPrefixFlagsByProperty.delete("initial-letter"); // Only supported by Safari
 expectedPrefixFlagsByProperty.delete("justify-self"); // "-ms-grid-column-align" in IE 11
 expectedPrefixFlagsByProperty.delete("line-break"); // Supported by iOS Safari 11+
 expectedPrefixFlagsByProperty.delete("ruby-position"); // "-webkit-ruby-position" uses non-standard values
