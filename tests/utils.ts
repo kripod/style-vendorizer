@@ -235,8 +235,6 @@ export const expectedPrefixFlagsByPropertyValuePair = new Map(
 );
 expectedPrefixFlagsByPropertyValuePair.delete("background-image:element"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("cursor:grab"); // Not required for Opera Mobile and QQ Browser
-expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:max-content"); // Only supported by Firefox
-expectedPrefixFlagsByPropertyValuePair.delete("flex-basis:min-content"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete("image-rendering:crisp-edges"); // Only supported by Firefox
 expectedPrefixFlagsByPropertyValuePair.delete(
 	"list-style-type:ethiopic-halehame",
@@ -255,12 +253,6 @@ expectedPrefixFlagsByPropertyValuePair.delete(
 	"list-style-type:hangul-consonant",
 ); // Non-standard
 expectedPrefixFlagsByPropertyValuePair.delete("list-style-type:urdu"); // Non-standard
-expectedPrefixFlagsByPropertyValuePair.delete(
-	"mask-position:three_value_syntax",
-); // Not universally supported
-expectedPrefixFlagsByPropertyValuePair.delete(
-	"perspective-origin:three_value_syntax",
-); // Not universally supported
 expectedPrefixFlagsByPropertyValuePair.delete("text-decoration:shorthand"); // Supported with property prefix
 expectedPrefixFlagsByPropertyValuePair.delete("transform:3d"); // Supported by newer WebView versions
 expectedPrefixFlagsByPropertyValuePair.delete("unicode-bidi:isolate"); // Site authors shouldn't override this
@@ -296,5 +288,3 @@ export const expectedAliasesByProperty = new Map(
 			return [property, aliases.values().next().value];
 		}),
 );
-expectedAliasesByProperty.set("align-self", "-ms-grid-row-align");
-expectedAliasesByProperty.set("justify-self", "-ms-grid-column-align");
