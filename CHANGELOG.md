@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/kripod/style-vendorizer/compare/v2.2.0...v2.2.1) (2022-06-25)
+
+### Docs
+
+- **readme:** remove old Travis CI badge ([5f1f3dc](https://github.com/kripod/style-vendorizer/commit/5f1f3dcf21760361ac6ab90adbb82094f6eca08e))
+
 ## [2.2.0](https://github.com/kripod/style-vendorizer/compare/v2.1.1...v2.2.0) (2022-06-25)
 
 ### Features
