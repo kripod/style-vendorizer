@@ -24,6 +24,7 @@ const cssPropertyAliases = new Map([
 	["overflow-wrap", "word-wrap"],
 	["padding-inline-end", "-webkit-padding-end"],
 	["padding-inline-start", "-webkit-padding-start"],
+	["print-color-adjust", "color-adjust"],
 	["row-gap", "grid-row-gap"],
 	["scroll-margin-bottom", "scroll-snap-margin-bottom"],
 	["scroll-margin-left", "scroll-snap-margin-left"],
@@ -39,7 +40,7 @@ export function cssPropertyAlias(property: string): string | undefined {
 
 export function cssPropertyPrefixFlags(property: string): number {
 	const matches =
-		/^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|mask(?:$|-[ispro]|-cl))|(tab-|column(?!-s)|text-align-l)|(ap)|(u|hy))/i.exec(
+		/^(?:(text-(?:decoration$|e|or|si)|back(?:ground-cl|d|f)|box-d|mask(?:$|-[ispro]|-cl)|pr|hyphena|flex-d)|(tab-|column(?!-s)|text-align-l)|(ap)|u|hy)/i.exec(
 			property,
 		);
 
@@ -53,7 +54,7 @@ export function cssPropertyPrefixFlags(property: string): number {
 
 export function cssValuePrefixFlags(property: string, value: string): number {
 	const matches =
-		/^(?:(pos)|(cli)|(background-i)|((?:max-|min-)?(?:block-s|inl|he|widt))|(dis))/i.exec(
+		/^(?:(pos)|(cli)|(background-i)|(flex(?:$|-b)|(?:max-|min-)?(?:block-s|inl|he|widt))|dis)/i.exec(
 			property,
 		);
 
@@ -69,7 +70,7 @@ export function cssValuePrefixFlags(property: string, value: string): number {
 		// background-image: "image-set(…)"
 		return /^image-/i.test(value) ? CSSPrefixFlags["-webkit-"] : 0;
 	} else if (matches[4]) {
-		// (max-|min-)?(width|inline-size|height|block-size): "min-content" | "max-content" | "fit-content"
+		// flex(-basis)?|(max-|min-)?(width|inline-size|height|block-size): "min-content" | "max-content" | "fit-content"
 		return value[3] === "-" ? CSSPrefixFlags["-moz-"] : 0;
 	} else {
 		// display: "grid" | "inline-grid"
