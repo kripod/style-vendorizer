@@ -1,5 +1,4 @@
 import bcd from "@mdn/browser-compat-data";
-import type { Identifier } from "@mdn/browser-compat-data/types";
 import browserslist from "browserslist";
 import compareVersions from "compare-versions";
 import { css } from "mdn-data";
@@ -84,7 +83,8 @@ const aliasesByProperty = new Map<string, Set<string>>();
 const aliasesByPropertyValuePair = new Map<string, Set<string>>();
 
 function traverse(
-	{ __compat, ...subfeatures }: Identifier,
+	// TODO: Use `Identifier` type from `@mdn/browser-compat-data`
+	{ __compat, ...subfeatures }: any,
 	property: string,
 	value?: string,
 ) {
@@ -106,7 +106,8 @@ function traverse(
 			!supportStatements[0].prefix &&
 			!supportStatements[0].alternative_name &&
 			(typeof supportStatements[0].version_added === "string"
-				? compareVersions(
+				? supportStatements[0].version_added !== "preview" &&
+				  compareVersions(
 						normalizeVersion(supportStatements[0].version_added),
 						minSupportedVersion,
 				  ) <= 0
@@ -117,7 +118,8 @@ function traverse(
 				({ prefix, version_added, version_removed, alternative_name }, i) => {
 					if (
 						(typeof version_removed === "string"
-							? compareVersions(
+							? version_removed === "preview" ||
+							  compareVersions(
 									normalizeVersion(version_removed),
 									minSupportedVersion,
 							  ) > 0
@@ -125,10 +127,12 @@ function traverse(
 						(i === 0 ||
 							(typeof version_added === "string" &&
 							typeof supportStatements[0].version_added === "string"
-								? compareVersions(
-										normalizeVersion(version_added),
-										normalizeVersion(supportStatements[0].version_added),
-								  ) < 0
+								? version_added !== "preview" &&
+								  (supportStatements[0].version_added === "preview" ||
+										compareVersions(
+											normalizeVersion(version_added),
+											normalizeVersion(supportStatements[0].version_added),
+										) < 0)
 								: version_added))
 					) {
 						if (prefix) {

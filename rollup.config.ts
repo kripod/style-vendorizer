@@ -1,7 +1,8 @@
-import ts from "@wessberg/rollup-plugin-ts";
+import { defineConfig } from "rollup";
 import { terser } from "rollup-plugin-terser";
+import ts from "rollup-plugin-ts";
 
-export default {
+export default defineConfig({
 	input: "./src/index.ts",
 	output: [
 		{
@@ -14,4 +15,4 @@ export default {
 		},
 	],
 	plugins: [ts(), terser()],
-};
+});
